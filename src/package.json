@@ -13,6 +13,7 @@
   "scripts": {
     "tsc": "tsc -skipLibCheck",
     "build": "npm i && npm run tsc",
+    "plugin.isolate": "npm run build && npm pack && cp nativescript-feedback-2.0.0.tgz .. && cd .. && find . -maxdepth 1 -type f ! -name 'nativescript-feedback-2.0.0.tgz' ! -name 'README.md' ! -name 'LICENSE' -delete && find . -mindepth 1 -maxdepth 1 -type d ! -name '.git' -exec rm -rf {} +&& tar -xvf nativescript-feedback-2.0.0.tgz --strip-components=1 && rm nativescript-feedback-2.0.0.tgz",
     "postclone": "npm i && cd ../demo && npm i && cd ../src && npm run plugin.link",
     "test.android": "npm run build && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
     "test.ios": "npm run build && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
