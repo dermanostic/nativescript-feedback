@@ -1,6 +1,0 @@
-*.map
-*.ts
-!feedback.*.d.ts
-!index.d.ts
-tsconfig.json
-platforms/android/res
